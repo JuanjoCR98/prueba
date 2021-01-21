@@ -9,4 +9,9 @@
   <p><b>Número redondeado: </b>{{numero_pi|number:".3"}}</p>
   <p><b>Seleccionar elementos de un array: </b>{{preposiciones |slice:2:5}}</p>
   <p><b>Convertir objeto a formato json: </b> {{usuarios | json}}</p>
+  <p><b>El cuadrado del 5: </b>{{5|numeros:"cuadrado"}}</p>
+  <p><b>La raiz cuadrada de 81: </b>{{81|numeros:"raiz"}}</p>
+  <p><b>Numero del (0-9) Elige:: </b>{{7|numeros:"aletras"}}</p>
+  <input type="number" [(ngModel)]="dni">
+  <p> {{dni}} {{dni|dni}}</p>
 </div>

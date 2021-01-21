@@ -12,6 +12,7 @@ export class TuberiasComponent implements OnInit {
   fecha: Date = new Date()
   dinero: number = 12.40
   numero_pi: number = Math.PI
+  dni:number
   preposiciones: string[] = ['a','ante','bajo','cabe','con','contra','de','desde']
   usuarios = [
     {nombre: "Juanjo", apellido: "Cortes", edad: 22},
