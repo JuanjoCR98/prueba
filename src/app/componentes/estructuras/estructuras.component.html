@@ -1,0 +1,34 @@
+<h2>Estructuras de control con IfElse</h2>
+<label for="verdad">¿Verdad o mentira? 
+    <input type="checkbox" id="verdad" [(ngModel)]="verdad">
+</label>
+<h5>{{verdad?"Es verdad":"Es mentira"}} con ternario</h5>
+<h5 *ngIf="verdad;else mentira">Es verdad con *ngIf</h5>
+<ng-template #mentira>
+    <h5>Es mentira con *ngIf</h5>
+</ng-template>
+<hr>
+<label for="edad">
+    <input type="number" id="edad" [(ngModel)]="edad">
+</label>
+<p>If-else con SugarCandy</p>
+<h5 *ngIf="edad<18;else adulto">Es menor de 18 años</h5>
+<ng-template #adulto>
+    <ng-container *ngIf="edad<30;else mayor30"><h5>Es menor de 30 años</h5></ng-container>
+</ng-template>
+<ng-template #mayor30><h5>Es mayor de 30 años</h5></ng-template>
+<p>If - Else con microsintaxis</p>
+<ng-template [ngIf]="edad<18" [ngIfElse]="adulto2"><h5>Es menor de 18 años</h5></ng-template>
+<ng-template #adulto2>
+    <ng-template [ngIf]="edad<30" [ngIfElse]="mayor302"><h5>Es menor de 30 años</h5></ng-template>
+</ng-template>
+<ng-template #mayor302><h5>Es mayor de 30 años</h5></ng-template>
+<hr>
+<p>Estructura For avanzado</p>
+<ul>
+    <li *ngFor="let numero of [0,11,22,33,44,55];let indice = index; let impar = odd; let primero = first;
+    let ultimo=last; let length=count;">
+    En la posicion {{indice}} de {{length-1}}, que es {{impar? " impar": " par"}}, está el número 
+    {{numero}}, que es el {{primero?" primer elemento del array":""}}{{ultimo?" ultimo elemento del array":""}}
+</li>
+</ul>
