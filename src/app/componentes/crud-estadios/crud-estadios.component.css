@@ -1,0 +1,6 @@
+.contenedor_estadios {
+  width: 100%;
+  height: 200px;
+  background: url('../../../assets/imagenes/estadio.jpg');
+  background-size: contain;
+}

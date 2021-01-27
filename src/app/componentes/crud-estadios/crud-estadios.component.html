@@ -1,0 +1,29 @@
+<div class="contenedor_estadios"></div>
+  <table class="table">
+    <thead>
+      <th>Id</th>
+      <th>Estadio</th>
+      <th>Localidad</th>
+      <th>Equipo</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let estadio of estadios" (click)="estadioSeleccionado=estadio">
+        <td>{{estadio.id}}</td>
+        <td>{{estadio.estadio}}</td>
+        <td>{{estadio.localidad}}</td>
+        <td>{{estadio.equipo}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <input type="text" [(ngModel)]="estadioNuevo.estadio" placeholder="Estadio">
+  <input type="text" [(ngModel)]="estadioNuevo.localidad" placeholder="Localidad">
+  <input type="text" [(ngModel)]="estadioNuevo.equipo" placeholder="Equipo">
+  <button (click)="insertarEstadio()">Insertar estadio</button><br>
+
+  <input type="text" [(ngModel)]="estadioSeleccionado.estadio" placeholder="Estadio">
+  <input type="text" [(ngModel)]="estadioSeleccionado.localidad" placeholder="Localidad">
+  <input type="text" [(ngModel)]="estadioSeleccionado.equipo" placeholder="Equipo">
+  <button (click)="editarEstadio(estadioSeleccionado)">Editar estadio</button>
+  <button (click)="borrarEstadio(estadioSeleccionado)">Borrar estadio</button>
+

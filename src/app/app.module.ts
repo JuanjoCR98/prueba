@@ -17,6 +17,9 @@ import { TuberiasComponent } from './componentes/tuberias/tuberias.component';
 import { NumerosPipe } from './pipes/numeros.pipe';
 import { DniPipe } from './pipes/dni.pipe';
 import { EstructurasComponent } from './componentes/estructuras/estructuras.component';
+import { FormularioClaseComponent } from './componentes/formulario-clase/formulario-clase.component';
+import { CrudLocalComponent } from './componentes/crud-local/crud-local.component';
+import { CrudEstadiosComponent } from './componentes/crud-estadios/crud-estadios.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { EstructurasComponent } from './componentes/estructuras/estructuras.comp
     TuberiasComponent,
     NumerosPipe,
     DniPipe,
-    EstructurasComponent
+    EstructurasComponent,
+    FormularioClaseComponent,
+    CrudLocalComponent,
+    CrudEstadiosComponent
   ],
   imports: [
     BrowserModule,
