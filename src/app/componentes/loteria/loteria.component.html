@@ -1,7 +1,14 @@
+<div class="contenedor_loteria">
+    <div class="contenedor_loteria_imagen"></div>
+</div>
+
+
 <app-generarloteria #numero1></app-generarloteria>
 <app-generarloteria #numero2></app-generarloteria>
 
-
-<button (click)="numero1.obten_aleatorio();numero2.obten_aleatorio()">Dame un numero</button>
-
-<p *ngIf="numero1.digito==numero2.digito">SON IGUALES</p>
+<img (click)="numero1.obten_numero_loteria();numero2.obten_numero_loteria()" 
+src="../../../assets/imagenes/loteria/bombo.png" width="200px" height="200px" style="float:left">
+<div *ngIf="(numero1.digito==numero2.digito)&&(numero1.digito!=null)&&(numero2.digito!=null)">
+    <img src="../../../assets/imagenes/loteria/premio.gif" width="600px" height="200px" 
+    style="float:left">
+</div>

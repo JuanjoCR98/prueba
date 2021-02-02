@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './componentes/about/about.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoteriaComponent } from './componentes/loteria/loteria.component';
 import { GenerarloteriaComponent } from './componentes/generarloteria/generarloteria.component';
 import { MultiplicarComponent } from './componentes/multiplicar/multiplicar.component';
@@ -20,6 +20,7 @@ import { EstructurasComponent } from './componentes/estructuras/estructuras.comp
 import { FormularioClaseComponent } from './componentes/formulario-clase/formulario-clase.component';
 import { CrudLocalComponent } from './componentes/crud-local/crud-local.component';
 import { CrudEstadiosComponent } from './componentes/crud-estadios/crud-estadios.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -38,12 +39,14 @@ import { CrudEstadiosComponent } from './componentes/crud-estadios/crud-estadios
     EstructurasComponent,
     FormularioClaseComponent,
     CrudLocalComponent,
-    CrudEstadiosComponent
+    CrudEstadiosComponent,
+    RegistroComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{provide:LOCALE_ID, useValue:"es"}],
   bootstrap: [AppComponent]

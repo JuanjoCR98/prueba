@@ -8,15 +8,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GenerarloteriaComponent implements OnInit {
 
-  digito:number;
+  digito: number;
+  imagendigito: string;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  obten_aleatorio(): void{
-    this.digito = Math.floor(Math.random()* (10));
+  obten_numero_loteria(): void {
+    this.digito = Math.floor(Math.random() * (10));
   }
 
 }

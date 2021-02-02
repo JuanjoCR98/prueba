@@ -1,23 +1,27 @@
-<table class="table"> 
-    <thead>
-        <th>Id</th>
-        <th>Titulo</th>
-        <th>Contenido</th>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let nota of notas" (click)="notaSeleccionada=nota">
-            <td>{{nota.id}}</td>
-            <td>{{nota.titulo}}</td>
-            <td>{{nota.contenido}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="contenedor_crud_local">
+    <input class="campo_formulario_local" type="text" [(ngModel)]="notaNueva.titulo" placeholder="Titulo"><br>
+    <input class="campo_formulario_local" type="text" [(ngModel)]="notaNueva.contenido" placeholder="Contenido">
+    <button (click)="insertarNota()" class="btn btn-primary">Insertar nota</button><br>
+    <hr>
+    <input class="campo_formulario_local" type="text" [(ngModel)]="notaSeleccionada.titulo"><br>
+    <input class="campo_formulario_local" type="text" [(ngModel)]="notaSeleccionada.contenido"><br>
+    <button (click)="editarNota(notaSeleccionada)" class="btn btn-primary">Editar nota</button>
+    <button (click)="borrarNota(notaSeleccionada)" class="btn btn-primary">Borrar nota</button>
+</div>
 
-<input type="text" [(ngModel)] ="notaNueva.titulo" placeholder="Titulo">
-<input type="text" [(ngModel)] ="notaNueva.contenido" placeholder="Contenido">
-<button (click)="insertarNota()">Insertar nota</button><br>
-
-<input type="text" [(ngModel)]="notaSeleccionada.titulo">
-<input type="text" [(ngModel)]="notaSeleccionada.contenido">
-<button (click)="editarNota(notaSeleccionada)">Editar nota</button>
-<button (click)="borrarNota(notaSeleccionada)">Borrar nota</button>
+<div class="contenedor_tabla_crud_local">
+    <table class="table table-hover">
+        <thead class="theadlocal">
+            <th>Id</th>
+            <th>Titulo</th>
+            <th>Contenido</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let nota of notas" (click)="notaSeleccionada=nota">
+                <td>{{nota.id}}</td>
+                <td>{{nota.titulo}}</td>
+                <td>{{nota.contenido}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

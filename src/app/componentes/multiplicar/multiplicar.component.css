@@ -1,0 +1,16 @@
+.contenedor_multiplicar{
+    width: 100%;
+    text-align: center;
+}
+.contenedor_tabla_multiplicar{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+.tfootmultiplicar{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.tfootmultiplicar:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}

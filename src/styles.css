@@ -1,0 +1,19 @@
+body{
+    height: 100%;
+    width: 100%;
+}
+
+.contenedor_icono{
+    background: url('assets/imagenes/bananas.png') repeat;
+    background-size: contain;
+    text-align: center;
+    height: 200px;
+}
+
+.icono{
+    width:200px;
+    height: 100%;
+    background: url('assets/imagenes/logo3bg.png') no-repeat;
+    background-size: contain;
+    display:inline-block
+}

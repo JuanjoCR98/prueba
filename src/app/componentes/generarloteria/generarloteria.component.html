@@ -1,3 +1,35 @@
-<h5>{{digito}}</h5>
-<p>Mi padre me pasa este número </p>
-<p>Éste es el objeto que me pasa mi padre: </p>
+
+<container-element [ngSwitch]= "digito">
+    <some-element *ngSwitchCase="0">
+        <div class="imagenloteria" style="background: url('../../../assets/imagenes/loteria/0.png')no-repeat;background-size: contain"></div>
+    </some-element>
+    <some-element *ngSwitchCase="1">
+        <div class="imagenloteria" style="background: url('../../../assets/imagenes/loteria/1.png')no-repeat;background-size: contain"></div>
+    </some-element>
+    <some-element *ngSwitchCase="2">
+        <div class="imagenloteria" style="background: url('../../../assets/imagenes/loteria/2.png')no-repeat;background-size: contain"></div>
+    </some-element>
+    <some-element *ngSwitchCase="3">
+        <div class="imagenloteria" style="background: url('../../../assets/imagenes/loteria/3.png')no-repeat;background-size: contain"></div>
+    </some-element>
+    <some-element *ngSwitchCase="4">
+        <div class="imagenloteria" style="background: url('../../../assets/imagenes/loteria/4.png')no-repeat;background-size: contain"></div>
+    </some-element>
+     <some-element *ngSwitchCase="5">
+        <div class="imagenloteria" style="background: url('../../../assets/imagenes/loteria/5.png')no-repeat;background-size: contain"></div>
+    </some-element>
+    <some-element *ngSwitchCase="6">
+        <div class="imagenloteria" style="background: url('../../../assets/imagenes/loteria/6.png')no-repeat;background-size: contain"></div>
+    </some-element>
+     <some-element *ngSwitchCase="7">
+        <div class="imagenloteria" style="background: url('../../../assets/imagenes/loteria/7.png')no-repeat;background-size: contain"></div>
+    </some-element>
+    <some-element *ngSwitchCase="8">
+        <div class="imagenloteria" style="background: url('../../../assets/imagenes/loteria/8.png')no-repeat;background-size: contain"></div>
+    </some-element>
+    <some-element *ngSwitchCase="9">
+        <div class="imagenloteria" style="background: url('../../../assets/imagenes/loteria/9.png')no-repeat;background-size: contain;"></div>
+    </some-element>
+</container-element>
+
+

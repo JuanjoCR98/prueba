@@ -1,0 +1,12 @@
+.contenedor_loteria{
+    width:100%;
+    text-align: center;
+}
+
+.contenedor_loteria_imagen{
+    width:400px;
+    height: 200px;
+    display: inline-block;
+    background: url('../../../assets/imagenes/loteria/loterianacional.jpg') no-repeat;
+    background-size: contain;
+}

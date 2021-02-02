@@ -1,6 +1,31 @@
-.contenedor_estadios {
+.contenedor_tabla_estadios {
+  width: 80%;
+  float:left;
+}
+.contenedor_crud_estadios{
+  float:left;
+  width:20%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.campo_formulario_estadios{
+  margin-bottom: 5px;
+}
+
+.btn{
+  margin-right: 2px;
+}
+
+.theadestadios{
+  background-color: rgb(191, 232, 227);
+}
+
+.contenedor_foto_estadios{
+  background: url('../../../assets/imagenes/estadio.jpg') no-repeat;
+  background-size: contain;
   width: 100%;
   height: 200px;
-  background: url('../../../assets/imagenes/estadio.jpg');
-  background-size: contain;
+  opacity:0.6;
+  filter:alpha(opacity=60);
 }

@@ -1,6 +1,19 @@
-<div class="contenedor_estadios"></div>
-  <table class="table">
-    <thead>
+<div class="contenedor_crud_estadios">
+  <div class="contenedor_foto_estadios"></div>
+  <input type="text" [(ngModel)]="estadioNuevo.estadio" class="campo_formulario_estadios" placeholder="Estadio">
+  <input type="text" [(ngModel)]="estadioNuevo.localidad" class="campo_formulario_estadios" placeholder="Localidad">
+  <input type="text" [(ngModel)]="estadioNuevo.equipo" class="campo_formulario_estadios" placeholder="Equipo">
+  <button (click)="insertarEstadio()" class="btn btn-primary">Insertar estadio</button><br>
+  <hr>
+  <input type="text" [(ngModel)]="estadioSeleccionado.estadio" class="campo_formulario_estadios" placeholder="Estadio">
+  <input type="text" [(ngModel)]="estadioSeleccionado.localidad" class="campo_formulario_estadios" placeholder="Localidad">
+  <input type="text" [(ngModel)]="estadioSeleccionado.equipo" class="campo_formulario_estadios" placeholder="Equipo">
+  <button (click)="editarEstadio(estadioSeleccionado)" class="btn btn-primary">Editar estadio</button>
+  <button (click)="borrarEstadio(estadioSeleccionado)" class="btn btn-primary">Borrar estadio</button>
+</div>
+<div class="contenedor_tabla_estadios">
+  <table class="table table-hover">
+    <thead class="theadestadios">
       <th>Id</th>
       <th>Estadio</th>
       <th>Localidad</th>
@@ -15,15 +28,5 @@
       </tr>
     </tbody>
   </table>
-
-  <input type="text" [(ngModel)]="estadioNuevo.estadio" placeholder="Estadio">
-  <input type="text" [(ngModel)]="estadioNuevo.localidad" placeholder="Localidad">
-  <input type="text" [(ngModel)]="estadioNuevo.equipo" placeholder="Equipo">
-  <button (click)="insertarEstadio()">Insertar estadio</button><br>
-
-  <input type="text" [(ngModel)]="estadioSeleccionado.estadio" placeholder="Estadio">
-  <input type="text" [(ngModel)]="estadioSeleccionado.localidad" placeholder="Localidad">
-  <input type="text" [(ngModel)]="estadioSeleccionado.equipo" placeholder="Equipo">
-  <button (click)="editarEstadio(estadioSeleccionado)">Editar estadio</button>
-  <button (click)="borrarEstadio(estadioSeleccionado)">Borrar estadio</button>
+</div>
 

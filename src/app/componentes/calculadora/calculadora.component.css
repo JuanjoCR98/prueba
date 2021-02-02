@@ -1,0 +1,38 @@
+.labelcalculadora{
+    margin-right: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+}
+
+.campo_formulario_calculadora{
+    height: 40px;
+    width: 150px;
+    font-size: 2em;
+}
+
+.contenedor_calculadora{
+    width:100%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.enlace_calculadora:hover{
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.boton_calculadora{
+    background-color: white;
+    border-radius: 15px;
+    border:1px solid black;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.boton_calculadora:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    border:1px solid white;
+    color:white;
+    font-weight: bold;
+}

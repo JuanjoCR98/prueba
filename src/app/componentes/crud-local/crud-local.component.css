@@ -1,0 +1,23 @@
+.contenedor_crud_local{
+    float:left;
+    width: 20%;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.contenedor_tabla_crud_local{
+    float:left;
+    width: 80%;
+}
+
+.campo_formulario_local{
+    margin-bottom: 5px;
+}
+
+.btn{
+    margin-right: 2px;
+}
+
+.theadlocal{
+    background-color: rgb(191, 232, 227);
+}

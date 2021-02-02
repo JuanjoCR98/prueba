@@ -1,5 +1,22 @@
-<p>Ésta es ta tabla de {{ factor }}</p>
-
-<ul (click)="volverACalculadora()">
-    <li *ngFor="let resultado of tabla; let num = index"> {{ factor }} * {{ num }} = {{ resultado }}</li>
-</ul>
+<div class="contenedor_multiplicar">
+    <div class="contenedor_tabla_multiplicar">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th colspan="2" class="table-active">Tabla del {{ factor }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let resultado of tabla; let num = index">
+                    <td>{{ factor }} * {{ num }}</td>
+                    <td class="table-success">{{ resultado }}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr (click)="volverACalculadora()"  class="tfootmultiplicar">
+                    <td colspan="2">Volver a calculadora</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
