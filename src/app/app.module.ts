@@ -23,6 +23,9 @@ import { CrudEstadiosComponent } from './componentes/crud-estadios/crud-estadios
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { CrudComponent } from './componentes/crud/crud.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './componentes/auth/login/login.component';
+import { PerfilComponent } from './componentes/auth/perfil/perfil.component';
+import { RegisterComponent } from './componentes/auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,9 @@ import { HttpClientModule } from '@angular/common/http';
     CrudEstadiosComponent,
     RegistroComponent,
     CrudComponent,
+    LoginComponent,
+    PerfilComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
