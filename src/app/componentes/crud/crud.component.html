@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4" style="background-color: rgb(242, 242, 242);">
+            <br>
+            <div class="input-group">
+                <input (input)="buscarConRetraso()" class="form-control" style="border-radius: 15px;" 
+                [(ngModel)]="busqueda" placeholder="Busqueda..">
+            </div>
+            <br>
+            <div [hidden]="insertado!=true" class="alert alert-success" role="alert">
+                <p>Se ha insertado correctamente</p>
+            </div>
+            
+            <h5>Formulario con formGroup</h5>
+            <form [formGroup]='formNuevo' (ngSubmit)='crearNota(formNuevo.value)'>
+                <input class="form-control" type="text" formControlName="titulo" placeholder="Título">
+                <input class="form-control" type="text" formControlName="contenido" placeholder="Contenido">
+                <button type="submit" class="btn btn-primary btn-block" *ngIf='!formNuevo.value.id; else editar' [disabled]='formNuevo.invalid'>Crear
+                    nota</button>
+                <ng-template #editar>
+                    <button type='button' class="btn btn-danger btn-block" (click)='eliminarNota()' [disabled]='!formNuevo.value.id'>Eliminar
+                        nota</button>
+                    <button type='button' class="btn btn-primary btn-block" (click)='editarNota()' [disabled]='formNuevo.invalid'>Editar nota</button>
+                    <button type='button' class="btn btn-warning btn-block" (click)='formNuevo.reset()'>Cancelar</button>
+                </ng-template>
+            </form>
+
+            <br>
+          
+            <h5>Formulario con ngModel</h5>
+            <div class="input-group">
+                <input class="form-control" type="text" [(ngModel)]="notaNueva.titulo" placeholder="Título">
+                <input class="form-control" type="text" [(ngModel)]="notaNueva.contenido" placeholder="Contenido">
+                <button class="btn btn-primary btn-block" (click)="crearNota(notaNueva)">Insertar nota</button>
+            </div>
+
+            
+
+        </div>
+        <div class="col-lg-8">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Titulo</th>
+                        <th>Contenido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let nota of notas" (click)="formNuevo.patchValue(nota)">
+                        <td>{{nota.titulo}}</td>
+                        <td>{{nota.contenido}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

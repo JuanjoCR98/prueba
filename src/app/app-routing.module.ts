@@ -12,6 +12,7 @@ import { EstructurasComponent } from './componentes/estructuras/estructuras.comp
 import { CrudLocalComponent } from './componentes/crud-local/crud-local.component';
 import { CrudEstadiosComponent } from './componentes/crud-estadios/crud-estadios.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
+import { CrudComponent } from './componentes/crud/crud.component';
 
 const routes: Routes = [
   {path: "", component:HomeComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: "saludo/:nombre/:apellidos", component:SaludoComponent},
   {path: "tuberias", component:TuberiasComponent},
   {path: "formulario", component:FormularioClaseComponent},
-  {path: "crud", component:CrudLocalComponent},
+  {path: "crudLocal", component:CrudLocalComponent},
+  {path: "crud", component:CrudComponent},
   {path: "estadios", component:CrudEstadiosComponent},
   {path: "registro", component:RegistroComponent},
 
