@@ -1,32 +1,38 @@
-<div class="contenedor_crud_estadios">
-  <div class="contenedor_foto_estadios"></div>
-  <input type="text" [(ngModel)]="estadioNuevo.estadio" class="campo_formulario_estadios" placeholder="Estadio">
-  <input type="text" [(ngModel)]="estadioNuevo.localidad" class="campo_formulario_estadios" placeholder="Localidad">
-  <input type="text" [(ngModel)]="estadioNuevo.equipo" class="campo_formulario_estadios" placeholder="Equipo">
-  <button (click)="insertarEstadio()" class="btn btn-primary">Insertar estadio</button><br>
-  <hr>
-  <input type="text" [(ngModel)]="estadioSeleccionado.estadio" class="campo_formulario_estadios" placeholder="Estadio">
-  <input type="text" [(ngModel)]="estadioSeleccionado.localidad" class="campo_formulario_estadios" placeholder="Localidad">
-  <input type="text" [(ngModel)]="estadioSeleccionado.equipo" class="campo_formulario_estadios" placeholder="Equipo">
-  <button (click)="editarEstadio(estadioSeleccionado)" class="btn btn-primary">Editar estadio</button>
-  <button (click)="borrarEstadio(estadioSeleccionado)" class="btn btn-primary">Borrar estadio</button>
+<div class="container" style="padding-top: 10px;">
+  <div class="shadow-lg p-3 mb-5 bg-white rounded" style="float: left;padding: 0;margin:0;">
+    <div class="contenedor_crud_estadios">
+      <div class="contenedor_foto_estadios"></div>
+      <input type="text" [(ngModel)]="estadioNuevo.estadio" class="campo_formulario_estadios" placeholder="Estadio">
+      <input type="text" [(ngModel)]="estadioNuevo.localidad" class="campo_formulario_estadios" placeholder="Localidad">
+      <input type="text" [(ngModel)]="estadioNuevo.equipo" class="campo_formulario_estadios" placeholder="Equipo">
+      <button (click)="insertarEstadio()" class="btn btn-primary">Insertar estadio</button><br>
+      <hr>
+      <input type="text" [(ngModel)]="estadioSeleccionado.estadio" class="campo_formulario_estadios"
+        placeholder="Estadio">
+      <input type="text" [(ngModel)]="estadioSeleccionado.localidad" class="campo_formulario_estadios"
+        placeholder="Localidad">
+      <input type="text" [(ngModel)]="estadioSeleccionado.equipo" class="campo_formulario_estadios"
+        placeholder="Equipo">
+      <button (click)="editarEstadio(estadioSeleccionado)" class="btn btn-primary" style="margin-bottom: 2px;">Editar estadio</button>
+      <button (click)="borrarEstadio(estadioSeleccionado)" class="btn btn-primary" style="margin-bottom: 5px;">Borrar estadio</button>
+    </div>
+    <div class="contenedor_tabla_estadios">
+      <table class="table table-hover">
+        <thead class="theadestadios">
+          <th>Id</th>
+          <th>Estadio</th>
+          <th>Localidad</th>
+          <th>Equipo</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let estadio of estadios" (click)="estadioSeleccionado=estadio">
+            <td>{{estadio.id}}</td>
+            <td>{{estadio.estadio}}</td>
+            <td>{{estadio.localidad}}</td>
+            <td>{{estadio.equipo}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
-<div class="contenedor_tabla_estadios">
-  <table class="table table-hover">
-    <thead class="theadestadios">
-      <th>Id</th>
-      <th>Estadio</th>
-      <th>Localidad</th>
-      <th>Equipo</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let estadio of estadios" (click)="estadioSeleccionado=estadio">
-        <td>{{estadio.id}}</td>
-        <td>{{estadio.estadio}}</td>
-        <td>{{estadio.localidad}}</td>
-        <td>{{estadio.equipo}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-

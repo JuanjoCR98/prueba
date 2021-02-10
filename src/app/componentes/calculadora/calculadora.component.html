@@ -1,9 +1,13 @@
-<div class="contenedor_calculadora">
-    <label class="labelcalculadora">Tabla de multiplicar del: </label>
-    <input type="number" [(ngModel)]="num_entrada" class="campo_formulario_calculadora">
-    <br />
-    <a class="enlace_calculadora" routerLink="/multiplicar/{{ num_entrada }}">Mostrar tabla a través del RouterLink</a>
-    <br>
-    <br>
-    <button class="boton_calculadora" (click)="navegarHacia(num_entrada)">Mostrar tabla a través del módulo Router</button>
+<div class="container" style="padding-top: 25px ;">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded" style="padding: 10px;">
+        <div class="contenedor_calculadora">
+            <label class="labelcalculadora">Tabla de multiplicar del: </label>
+            <input type="number" [(ngModel)]="num_entrada" class="campo_formulario_calculadora">
+            <br />
+            <a class="enlace_calculadora" routerLink="/multiplicar/{{ num_entrada }}">Mostrar tabla a través del RouterLink</a>
+            <br>
+            <br>
+            <button class="boton_calculadora" (click)="navegarHacia(num_entrada)">Mostrar tabla a través del módulo Router</button>
+        </div>
+    </div>
 </div>

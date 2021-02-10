@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/servicios/user.service';
+import { User } from 'src/app/clases/user';
+import { Validators, FormBuilder } from '@angular/forms';
+import { telefonoValido, dniValido } from 'src/app/validaciones/validaciones';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -6,10 +11,56 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
+  perfil: User = {}
+  mostrarEditar:boolean = false;
+  mostrarEliminar:boolean = false;
+  inputBorrar:string=""
 
-  constructor() { }
+  formPerfil = this.fb.group({
+    nombre: [""],
+    apellidos: [""],
+    password: ["",[Validators.required,Validators.minLength(4)]],
+    password2: ["",[Validators.required]],
+    email: ["",[Validators.required,Validators.email]],
+    telefono:[undefined,[telefonoValido()]]
+  })
+  
+  constructor(private fb:FormBuilder,private servicioUsuario:UserService,private irHacia:Router) { }
 
   ngOnInit(): void {
+    this.cargarPerfil()
+  }
+
+  cargarPerfil(): void{
+    this.servicioUsuario.obtenerPerfil().subscribe(
+      respuesta=>{
+        console.log(respuesta)
+        this.perfil = respuesta
+      },
+      error => console.log(error)
+    )
+  }
+
+  editarPerfil(): void{
+    this.servicioUsuario.editarPerfil(this.formPerfil.value).subscribe(
+      respuesta=>{
+        console.log(respuesta)
+        this.cargarPerfil()
+        this.mostrarEditar = false
+      },
+      error => console.log(error)
+    )
+  }
+
+  borrarPerfil(): void{
+    this.servicioUsuario.borrarPerfil().subscribe(
+      respuesta => {
+        console.log(respuesta)
+        this.servicioUsuario.logOut()
+        this.irHacia.navigate(["/login"])
+      },
+      error => console.log(error)
+    )
   }
 
 }

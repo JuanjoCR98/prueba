@@ -1,17 +1,20 @@
-<div class="contenedor_tuberias">
-  <p><b>Convertir a mayusculas:</b> {{ usuario | uppercase}}</p>
-  <p><b>Convertir a minúsculas:</b> {{ mes | lowercase}}</p>
-  <p><b>La primera letra de cada palabra en mayúsculas: </b> {{texto | titlecase}} </p>
-  <p><b>Fecha: </b> {{fecha | date}}</p>
-  <p><b>Fecha: </b> {{fecha | date:"dd/MM/yyyy"}}</p>
-  <p><b>Hora: </b> {{fecha | date:"hh:mm:ss"}}</p>
-  <p><b>Dinero: </b> {{dinero | currency: "EUR"}}</p>
-  <p><b>Número redondeado: </b>{{numero_pi|number:".3"}}</p>
-  <p><b>Seleccionar elementos de un array: </b>{{preposiciones |slice:2:5}}</p>
-  <p><b>Convertir objeto a formato json: </b> {{usuarios | json}}</p>
-  <p><b>El cuadrado del 5: </b>{{5|numeros:"cuadrado"}}</p>
-  <p><b>La raiz cuadrada de 81: </b>{{81|numeros:"raiz"}}</p>
-  <p><b>Numero del (0-9) Elige:: </b>{{7|numeros:"aletras"}}</p>
-  <input type="number" [(ngModel)]="dni">
-  <p> {{dni}} {{dni|dni}}</p>
+<div class="container" style="padding-top: 10px;">
+  <div class="shadow-lg p-3 mb-5 bg-white rounded">
+    <p><b>Convertir a mayusculas:</b> {{ usuario | uppercase}}</p>
+    <p><b>Convertir a minúsculas:</b> {{ mes | lowercase}}</p>
+    <p><b>La primera letra de cada palabra en mayúsculas: </b> {{texto | titlecase}} </p>
+    <p><b>Fecha: </b> {{fecha | date}}</p>
+    <p><b>Fecha: </b> {{fecha | date:"dd/MM/yyyy"}}</p>
+    <p><b>Hora: </b> {{fecha | date:"hh:mm:ss"}}</p>
+    <p><b>Dinero: </b> {{dinero | currency: "EUR"}}</p>
+    <p><b>Número redondeado: </b>{{numero_pi|number:".3"}}</p>
+    <p><b>Seleccionar elementos de un array: </b>{{preposiciones |slice:2:5}}</p>
+    <p><b>Convertir objeto a formato json: </b> {{usuarios | json}}</p>
+    <p><b>El cuadrado del 5: </b>{{5|numeros:"cuadrado"}}</p>
+    <p><b>La raiz cuadrada de 81: </b>{{81|numeros:"raiz"}}</p>
+    <p><b>Numero del (0-9) Elige:: </b>{{7|numeros:"aletras"}}</p>
+    <input type="number" [(ngModel)]="dni">
+    <p> {{dni}} {{dni|dni}}</p>
+  </div>
 </div>
+

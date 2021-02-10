@@ -46,7 +46,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let nota of notas" (click)="formNuevo.patchValue(nota)">
+                    <tr [ngClass]='{"text-white bg-dark":nota.idUser}' *ngFor="let nota of notas" (click)="nota.idUser ? formNuevo.patchValue(nota) : formNuevo.reset()">
                         <td>{{nota.titulo}}</td>
                         <td>{{nota.contenido}}</td>
                     </tr>

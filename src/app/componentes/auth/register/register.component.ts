@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { telefonoValido, dniValido } from 'src/app/validaciones/validaciones';
 import { UserService } from 'src/app/servicios/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,7 @@ export class RegisterComponent implements OnInit {
     telefono:[undefined,[telefonoValido()]],
     dni:["",[Validators.required,dniValido()]]
   })
-  constructor(private fb:FormBuilder, private servicioUsuario:UserService) { }
+  constructor(private fb:FormBuilder, private servicioUsuario:UserService,private irHacia:Router) { }
 
   ngOnInit(): void {
   }
@@ -33,7 +34,11 @@ export class RegisterComponent implements OnInit {
           this.registrado = true
           this.servicioUsuario.guardarToken(respuesta)
         if(this.temporizador == null){
-          this.temporizador=setTimeout(()=>{this.registrado = false},4000);
+          this.temporizador=setTimeout(()=>{
+            this.registrado = false
+            this.irHacia.navigate(["/perfil"])
+          },2000);
+          
         }  
         },
         error => console.log(error)

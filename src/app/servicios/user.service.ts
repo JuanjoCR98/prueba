@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User, accesoUsuario } from '../clases/user';
 import { Observable } from 'rxjs';
 
-const url="http://localhost:3000/user"
+const url="http://localhost:3000/user/"
 
 @Injectable({
   providedIn: 'root'
@@ -24,11 +24,23 @@ export class UserService {
     return this.http.post(url+"login",usuario)
   }
 
+  editarPerfil(perfil:User): Observable<any>{
+    return this.http.put(url,perfil)
+  }
+
+  obtenerPerfil(): Observable<any>{
+    return this.http.get(url)
+  }
+
+  borrarPerfil(): Observable<any>{
+    return this.http.delete(url)
+  }
+
   isLogged(): boolean{
     return !!localStorage.getItem("tokenregistro")
   }
   logOut(){
-    localStorage.removeItem('tokenregistro')
+    localStorage.removeItem("tokenregistro")
   }
 
   leerToken(): string{

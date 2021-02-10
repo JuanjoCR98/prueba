@@ -15,6 +15,7 @@ export class NavegacionComponent implements OnInit {
 
   doLogout(){
     this.servicioUsuario.logOut()
+    this.irHacia.navigate(["/login"])
   }
 
   fnLogged(): boolean{
