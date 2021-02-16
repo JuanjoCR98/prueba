@@ -15,6 +15,7 @@ export class PerfilComponent implements OnInit {
   mostrarEditar: boolean = false;
   mostrarEliminar: boolean = false;
   inputBorrar: string = ""
+  foto:File
 
   formPerfil = this.fb.group({
     nombre: [""],
@@ -71,6 +72,7 @@ export class PerfilComponent implements OnInit {
     this.servicioUsuario.subirImagen(formData).subscribe(
       respuesta => {
         console.log(respuesta)
+        this.cargarPerfil()
       },
       error => console.log(error)
     )
@@ -80,6 +82,25 @@ export class PerfilComponent implements OnInit {
     if (evento.target.files) {
       this.formImagen.get("imagen").setValue(evento.target.files[0])
     }
+  }
+
+  tengoFoto(evento):void{
+    if(evento.target.files){
+      this.foto = evento.target.files[0]
+    }
+  }
+
+  subirFoto(): void{
+    const formData = new FormData()
+      formData.append("imagen",this.foto)
+      this.servicioUsuario.subirImagen(formData).subscribe(
+        respuesta => {
+          console.log(respuesta)
+          this.cargarPerfil()
+        },
+        error => {console.log(error)}
+      )
+    
   }
 
 }

@@ -17,6 +17,7 @@ import { RegisterComponent } from './componentes/auth/register/register.componen
 import { LoginComponent } from './componentes/auth/login/login.component';
 import { PerfilComponent } from './componentes/auth/perfil/perfil.component';
 import { UserRouterGuard } from './auth/user-router.guard';
+import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 
 const routes: Routes = [
   {path: "", component:HomeComponent},
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: "registro", component:RegisterComponent},
   {path: "login", component:LoginComponent},
   {path: "perfil", component:PerfilComponent,canActivate:[UserRouterGuard]},
+  {path: "usuarios", component:UsuariosComponent},
 
   {path: "**", component:HomeComponent},
 ];

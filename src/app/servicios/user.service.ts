@@ -17,12 +17,12 @@ export class UserService {
     return this.http.post(url,usuario)
   }
 
-  guardarToken(respuesta:string){
-    localStorage.setItem('tokenregistro', respuesta)
-  }
-
   login(usuario:accesoUsuario): Observable<any>{
     return this.http.post(url+"login/",usuario)
+  }
+
+  guardarToken(respuesta:string){
+    localStorage.setItem('tokenregistro', respuesta)
   }
 
   editarPerfil(perfil:User): Observable<any>{
@@ -31,6 +31,9 @@ export class UserService {
 
   obtenerPerfil(): Observable<any>{
     return this.http.get(url)
+  }
+  obtenerUsuarios():Observable<any>{
+    return this.http.get(url+"list/")
   }
 
   borrarPerfil(): Observable<any>{
@@ -50,4 +53,6 @@ export class UserService {
   leerToken(): string{
     return localStorage.getItem("tokenregistro")
   }
+
+
 }
