@@ -12,28 +12,30 @@ import { Router } from '@angular/router';
 })
 export class PerfilComponent implements OnInit {
   perfil: User = {}
-  mostrarEditar:boolean = false;
-  mostrarEliminar:boolean = false;
-  inputBorrar:string=""
+  mostrarEditar: boolean = false;
+  mostrarEliminar: boolean = false;
+  inputBorrar: string = ""
 
   formPerfil = this.fb.group({
     nombre: [""],
     apellidos: [""],
-    password: ["",[Validators.required,Validators.minLength(4)]],
-    password2: ["",[Validators.required]],
-    email: ["",[Validators.required,Validators.email]],
-    telefono:[undefined,[telefonoValido()]]
+    password: ["", [Validators.required, Validators.minLength(4)]],
+    password2: ["", [Validators.required]],
+    email: ["", [Validators.required, Validators.email]],
+    telefono: [undefined, [telefonoValido()]]
   })
-  
-  constructor(private fb:FormBuilder,private servicioUsuario:UserService,private irHacia:Router) { }
+  formImagen = this.fb.group({
+    imagen: ["", Validators.required]
+  })
+  constructor(private fb: FormBuilder, private servicioUsuario: UserService, private irHacia: Router) { }
 
   ngOnInit(): void {
     this.cargarPerfil()
   }
 
-  cargarPerfil(): void{
+  cargarPerfil(): void {
     this.servicioUsuario.obtenerPerfil().subscribe(
-      respuesta=>{
+      respuesta => {
         console.log(respuesta)
         this.perfil = respuesta
       },
@@ -41,9 +43,9 @@ export class PerfilComponent implements OnInit {
     )
   }
 
-  editarPerfil(): void{
+  editarPerfil(): void {
     this.servicioUsuario.editarPerfil(this.formPerfil.value).subscribe(
-      respuesta=>{
+      respuesta => {
         console.log(respuesta)
         this.cargarPerfil()
         this.mostrarEditar = false
@@ -52,7 +54,7 @@ export class PerfilComponent implements OnInit {
     )
   }
 
-  borrarPerfil(): void{
+  borrarPerfil(): void {
     this.servicioUsuario.borrarPerfil().subscribe(
       respuesta => {
         console.log(respuesta)
@@ -61,6 +63,23 @@ export class PerfilComponent implements OnInit {
       },
       error => console.log(error)
     )
+  }
+
+  subirImagen(): void {
+    const formData = new FormData()
+    formData.append("imagen", this.formImagen.get("imagen").value)
+    this.servicioUsuario.subirImagen(formData).subscribe(
+      respuesta => {
+        console.log(respuesta)
+      },
+      error => console.log(error)
+    )
+  }
+
+  cambiaImagen(evento): void {
+    if (evento.target.files) {
+      this.formImagen.get("imagen").setValue(evento.target.files[0])
+    }
   }
 
 }
