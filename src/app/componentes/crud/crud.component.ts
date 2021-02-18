@@ -58,6 +58,7 @@ export class CrudComponent implements OnInit {
       error => {console.log(error)}
     )
   }
+
   editarNota(): void{
     this.servicio.editarNota(this.formNuevo.value).subscribe(
       respuesta => {

@@ -1,22 +1,47 @@
 <div class="container" style="padding-top: 10px;">
   <div class="shadow-lg p-3 mb-5 bg-white rounded">
-      <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>Email</th>
-            <th>Telefono</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr [ngClass]='{"text-white bg-dark":usuario.id}' *ngFor="let usuario of usuarios">
-            <td>{{usuario.nombre}}</td>
-            <td>{{usuario.nombre}}</td>
-            <td>{{usuario.email}}</td>
-            <td>{{usuario.telefono}}</td>
-          </tr>
-        </tbody>
-      </table>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr (click)="usuarioSeleccionado=usuario" *ngFor="let usuario of usuarios">
+          <td>{{usuario.nombre}}</td>
+          <td>{{usuario.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+
+  <div *ngIf="usuarioSeleccionado" class="shadow-lg p-3 mb-5 bg-white rounded">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Email</th>
+          <th>Telefono</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{usuarioSeleccionado.nombre}}</td>
+          <td>{{usuarioSeleccionado.apellidos}}</td>
+          <td>{{usuarioSeleccionado.email}}</td>
+          <td>{{usuarioSeleccionado.telefono}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary btn-block" (click)="usuarioSeleccionado=''">Limpiar datos</button>
+  </div>
+  <div class="shadow-lg p-3 mb-5 bg-white rounded">
+    <form [formGroup]="formMensaje" (submit)="escribirMensaje()">
+      <input type="text" formControlName="mensaje" class="form-control" placeholder="Escribe su mensaje..."><br>
+      <button type="submit" [disabled]="!formMensaje.valid" class="btn btn-primary btn-block">Enviar Mensaje</button>
+    </form>
   </div>
 </div>
