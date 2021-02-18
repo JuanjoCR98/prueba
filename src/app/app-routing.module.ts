@@ -18,6 +18,8 @@ import { LoginComponent } from './componentes/auth/login/login.component';
 import { PerfilComponent } from './componentes/auth/perfil/perfil.component';
 import { UserRouterGuard } from './auth/user-router.guard';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
+import { ListarmensajesComponent } from './componentes/listarmensajes/listarmensajes.component';
+import { ListarmensajesrecibidosComponent } from './componentes/listarmensajesrecibidos/listarmensajesrecibidos.component';
 
 const routes: Routes = [
   {path: "", component:HomeComponent},
@@ -36,6 +38,8 @@ const routes: Routes = [
   {path: "login", component:LoginComponent},
   {path: "perfil", component:PerfilComponent,canActivate:[UserRouterGuard]},
   {path: "usuarios", component:UsuariosComponent},
+  {path: "listarmensajes", component:ListarmensajesComponent},
+  {path: "listarmensajesrecibidos", component:ListarmensajesrecibidosComponent},
 
   {path: "**", component:HomeComponent},
 ];

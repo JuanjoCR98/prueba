@@ -6,16 +6,16 @@
   <div class="collapse navbar-collapse" id="navbarColor03">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/">Home <i class="fa fa-home" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/about">About</a>
+        <a class="nav-link" routerLink="/about">About <i class="fa fa-user" aria-hidden="true"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/loteria">Loteria</a>
+        <a class="nav-link" routerLink="/loteria">Loteria <i class="fa fa-money" aria-hidden="true"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/calculadora">Calculadora</a>
+        <a class="nav-link" routerLink="/calculadora">Calculadora <i class="fa fa-calculator" aria-hidden="true"></i></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/tuberias">Tuberias</a>
@@ -38,7 +38,17 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/usuarios">Usuarios</a>
+        <a class="nav-link" routerLink="/usuarios">Usuarios <i class="fa fa-user-o" aria-hidden="true"></i></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Mensajes <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/listarmensajes">Mensajes enviados</a>
+          <a class="dropdown-item" routerLink="/listarmensajesrecibidos">Mensajes recibidos</a>
+        </div>
       </li>
     </ul>
     <ul class="navbar-nav mt-2 mt-lg-0">

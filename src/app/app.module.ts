@@ -29,6 +29,8 @@ import { PerfilComponent } from './componentes/auth/perfil/perfil.component';
 import { RegisterComponent } from './componentes/auth/register/register.component';
 import { EnviarTokenInterceptor } from './auth/enviar-token.interceptor';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
+import { ListarmensajesComponent } from './componentes/listarmensajes/listarmensajes.component';
+import { ListarmensajesrecibidosComponent } from './componentes/listarmensajesrecibidos/listarmensajesrecibidos.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
     PerfilComponent,
     RegisterComponent,
     UsuariosComponent,
+    ListarmensajesComponent,
+    ListarmensajesrecibidosComponent,
   ],
   imports: [
     BrowserModule,

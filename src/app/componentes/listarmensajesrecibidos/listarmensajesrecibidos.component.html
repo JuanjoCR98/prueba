@@ -1,0 +1,22 @@
+<div class="container" style="padding-top: 10px;">
+  <div class="shadow-lg p-3 mb-5 bg-white rounded">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Remitente</th>
+          <th>Destinatario</th>
+          <th>Mensaje</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mensaje of mensajesRecibidos">
+          <td>{{mensaje.idRemitente}}</td>
+          <td>{{mensaje.idDestinatario}}</td>
+          <td>{{mensaje.mensaje}}</td>
+          <td><button class="btn btn-danger" (click)="borrarMensaje(mensaje.id)">X</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
