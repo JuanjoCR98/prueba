@@ -10,16 +10,17 @@ export function telefonoValido(): ValidatorFn{
     };
 }
 
+
+
 export function dniValido(): ValidatorFn{
-    return (dni:AbstractControl):{[key:string]:any}| null =>{
+    return (dni: AbstractControl):{[key:string]:any} | null => {
         const letras = "TRWAGMYFPDXBNJZSQVHLCKET";
-        const numero = dni.value.match(/\d+/g);
-        let letra = dni.value.match(/[a-z]/gi);
+        let numero = dni.value.match(/\d+/g);
+        let letra = dni.value.match (/[a-z]/gi);
         const letra_eval = letras [numero%23];
-        if(letra == null)return {dni: "falta la lettra"};
+        if (letra == null)return {dni: "Falta la letra"};
         else letra = letra.join().toUpperCase();
-        if(letra_eval != letra) return {dni:"invalido"};
-        else return null;
+        if (letra_eval != letra) return {dni: "inválido"}
+        else {return null}
     }
-    return null;
 }
