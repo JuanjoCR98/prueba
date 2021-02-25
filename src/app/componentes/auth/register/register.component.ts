@@ -13,6 +13,7 @@ import { Valida } from 'src/app/clases/valida';
 export class RegisterComponent implements OnInit {
   valida: Valida = new Valida
   dni: any
+  pass: string
   mensaje: string
   registrado: boolean = false
   temporizador: any
@@ -32,9 +33,13 @@ export class RegisterComponent implements OnInit {
 
   submit() {
     this.dni = this.formRegister.value.dni;
+    this.pass = this.formRegister.value.password
     if (this.formRegister.value.password != this.formRegister.value.password2) {
       this.mensaje = "No coinciden las contraseñas"
-    } else if (!this.valida.dniValido(this.dni)) {
+    }else if(this.pass.length<4){
+      this.mensaje = "La contraseña debe de tener al menos 4 caracteres"
+    }
+     else if (!this.valida.dniValido(this.dni)) {
       this.mensaje = "DNI no válido"
     } else if (this.formRegister.value.telefono > 999999999 || this.formRegister.value.telefono < 600000000) {
       this.mensaje = "Teléfono no válido"
@@ -43,10 +48,10 @@ export class RegisterComponent implements OnInit {
         respuesta => {
           console.log(respuesta)
           this.registrado = true
+          this.mensaje = null
           this.servicioUsuario.guardarToken(respuesta)
           if (this.temporizador == null) {
             this.temporizador = setTimeout(() => {
-              this.mensaje = null
               this.registrado = false
               this.irHacia.navigate(["/perfil"])
             }, 2000);

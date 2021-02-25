@@ -38,6 +38,12 @@
     </table>
     <button class="btn btn-primary btn-block" (click)="usuarioSeleccionado=''">Limpiar datos</button>
   </div>
+  <div [hidden]="mensajeerr==null" class="alert alert-danger" role="alert">
+    <p>{{mensajeerr}}</p>
+  </div>
+  <div [hidden]="mensajeok==null" class="alert alert-success" role="alert">
+    <p>{{mensajeok}}</p>
+  </div>
   <div class="shadow-lg p-3 mb-5 bg-white rounded">
     <form [formGroup]="formMensaje" (submit)="escribirMensaje()">
       <input type="text" formControlName="mensaje" class="form-control" placeholder="Escribe su mensaje..."><br>

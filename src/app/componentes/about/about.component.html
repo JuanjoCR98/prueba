@@ -1,5 +1,14 @@
-<div class="formulario_about">
-  <input class="campo_formulario" type="text" [(ngModel)]="nombre" placeholder="NOMBRE"><br>
-  <input class="campo_formulario" type="text" [(ngModel)]="apellidos" placeholder="APELLIDOS"><br>
-  <button class="boton_formulario" (click)="saludarA(nombre,apellidos)">SALUDAR</button>
+<div class="container" style="margin-top: 10px;">
+  <div class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="card">
+      <div class="card-header" style="text-align:center">
+        <h3>¿A quién quieres saludar?</h3>
+      </div>
+      <div class="card-body">
+        <input class="form-control" type="text" [(ngModel)]="nombre" placeholder="NOMBRE"><br>
+        <input class="form-control" type="text" [(ngModel)]="apellidos" placeholder="APELLIDOS"><br>
+        <button class="btn btn-primary btn-block" (click)="saludarA(nombre,apellidos)">SALUDAR</button>
+      </div>
+    </div>
+  </div>
 </div>

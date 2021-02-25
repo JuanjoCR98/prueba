@@ -16,6 +16,7 @@ export class PerfilComponent implements OnInit {
   mostrarEliminar: boolean = false;
   inputBorrar: string = ""
   foto:File
+  imagenerr: string
 
   formPerfil = this.fb.group({
     nombre: [""],
@@ -72,9 +73,13 @@ export class PerfilComponent implements OnInit {
     this.servicioUsuario.subirImagen(formData).subscribe(
       respuesta => {
         console.log(respuesta)
+        this.imagenerr = null
         this.cargarPerfil()
       },
-      error => console.log(error)
+      error => {
+        console.log(error)
+        this.imagenerr = error.error.error
+      }
     )
   }
 
@@ -96,9 +101,13 @@ export class PerfilComponent implements OnInit {
       this.servicioUsuario.subirImagen(formData).subscribe(
         respuesta => {
           console.log(respuesta)
+          this.imagenerr = null
           this.cargarPerfil()
         },
-        error => {console.log(error)}
+        error => {
+          console.log(error)
+          this.imagenerr = error.error.error
+        }
       )
     
   }

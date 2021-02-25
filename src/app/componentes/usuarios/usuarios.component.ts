@@ -13,6 +13,8 @@ export class UsuariosComponent implements OnInit {
 
   constructor(private servicioUsuario: UserService,private servicioMensaje: MensajeService, private fb:FormBuilder) { }
   usuarios: User[]=[]
+  mensajeok : string
+  mensajeerr: string
   usuarioSeleccionado: User 
   formMensaje = this.fb.group({
     idDestinatario: [''],
@@ -35,9 +37,15 @@ export class UsuariosComponent implements OnInit {
   escribirMensaje(): void{
     this.servicioMensaje.crearMensaje(this.formMensaje.value).subscribe(
       respuesta => {
+        this.mensajeok = "Has enviado un mensaje correctamente"
+        this.mensajeerr = null
         console.log(respuesta)
       },
-      error => {console.log(error)}
+      error => {
+        this.mensajeok = null
+        this.mensajeerr = "Hubo un error al enviar el mensaje. Inténtelo de nuevo."
+        console.log(error)
+      }
     )
   }
 
