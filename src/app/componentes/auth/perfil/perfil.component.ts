@@ -17,6 +17,9 @@ export class PerfilComponent implements OnInit {
   inputBorrar: string = ""
   foto:File
   imagenerr: string
+  editarerr:string
+  editarok:string
+  temporizador: any
 
   formPerfil = this.fb.group({
     nombre: [""],
@@ -51,8 +54,20 @@ export class PerfilComponent implements OnInit {
         console.log(respuesta)
         this.cargarPerfil()
         this.mostrarEditar = false
+        this.editarerr = null
+        this.editarok = "Usuario actualizado correctamente"
+        if (this.temporizador == null) {
+          this.temporizador = setTimeout(() => {
+            this.editarok = null
+          }, 3000);
+        }
+        
       },
-      error => console.log(error)
+      error => {
+        this.editarok = null  
+        this.editarerr = error.error.error       
+        console.log(error)
+      }
     )
   }
 

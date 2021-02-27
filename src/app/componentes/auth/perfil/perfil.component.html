@@ -2,6 +2,10 @@
   <div class="shadow-lg p-3 mb-5 bg-white rounded">
     <div class="card">
       <div class="card-body">
+       
+        <div [hidden]="editarok==null" class="alert alert-success" role="alert">
+          <p>{{editarok}}</p>
+        </div>
         <div class="row">
           <div class="col-4">
             <img *ngIf= "perfil.imgSrc != null;else noimg" src="{{perfil.imgSrc}}" width="150px" height="150px">
@@ -30,7 +34,9 @@
           <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8" style="padding-top: 5px;">
-
+              <div [hidden]="editarerr==null" class="alert alert-danger" role="alert">
+                <p>{{editarerr}}</p>
+              </div>
               <form [formGroup]="formPerfil" (submit)="editarPerfil()">
                 <div class="form-group">
                   <input type="text" class="form-control" formControlName="nombre" [(ngModel)]="perfil.nombre"
